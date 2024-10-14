@@ -1,0 +1,20 @@
+{
+    "name": "challengelatinadplayer",
+    "version": "1.0.0",
+    "description": "Challenge LatinAd Player",
+    "main": "main.js",
+    "author": "Emmanuel Arcumano",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^32.1.2"
+    },
+    "scripts": {
+        "start": "electron .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "axios": "^1.7.7",
+        "lokijs": "^1.5.12",
+        "moment": "^2.30.1"
+    }
+}
