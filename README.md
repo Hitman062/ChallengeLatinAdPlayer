@@ -1,38 +1,49 @@
 # ChallengeLatinAdPlayer
 
-### Tareas
+### Tasks
 
-#### Ventana:
+#### Window:
 
--   [x] El reproductor debe operar en pantalla completa y en modo ventana sin marcos.
--   [x] Permitir configurar las dimensiones de la ventana (alto, ancho) y su posición inicial (coordenadas X, Y desde la esquina superior izquierda).
--   [x] El cursor del mouse debe ocultarse si se encuentra sobre la ventana del reproductor.
+-   [x] The player must operate in full screen and in windowless mode.
+-   [x] Allow configuring the window dimensions (height, width) and its initial position (X, Y coordinates from the top left corner).
+-   [x] The mouse cursor must be hidden when over the player window.
 
-#### Reproducción de Contenido:
+#### Content Playback:
 
--   [x] El reproductor debe reproducir imágenes y videos en loop.
--   [x] Las imágenes y videos deben descargarse localmente para garantizar que el reproductor funcione sin internet.
--   [x] Usar una librería como NeDB o LokiDB para la base de datos local.
--   [ ] La reproducción debe ser gapless (sin pantallas negras entre anuncios), precargando el anuncio siguiente en un div oculto.
--   [x] Mostrar anuncios ocupando toda la pantalla o respetando la relación de aspecto, según el campo "fill_screen" (CSS object-fit: fill o contain).
+-   [x] The player must play images and videos in a loop.
+-   [x] Images and videos must be downloaded locally to ensure the player works without internet.
+-   [x] Use a library like NeDB or LokiDB for the local database.
+-   [ ] Playback must be gapless (no black screens between ads), preloading the next ad in a hidden div.
+-   [x] Display ads filling the entire screen or respecting the aspect ratio, according to the "fill_screen" field (CSS object-fit: fill or contain).
 
-#### Orden, duración y filtrado de contenidos:
+#### Order, duration, and content filtering:
 
--   [x] Respetar el orden de reproducción basado en el campo "position", reproduciendo los anuncios en orden ascendente.
--   [x] Cada anuncio debe reproducirse durante el tiempo especificado en el campo "length" (milisegundos).
--   [x] Reproducir solo los anuncios dentro del rango de fechas especificado por "from_date" y "to_date".
--   [x] Eliminar automáticamente los archivos descargados de anuncios que ya no deben reproducirse.
+-   [x] Respect the playback order based on the "position" field, playing ads in ascending order.
+-   [x] Each ad must play for the time specified in the "length" field (milliseconds).
+-   [x] Play only ads within the date range specified by "from_date" and "to_date".
+-   [x] Automatically delete downloaded files of ads that should no longer be played.
 
-#### Consulta y Actualización de Contenidos:
+#### Content Query and Update:
 
--   [x] Consultar un backend cada 10 segundos para obtener la lista de anuncios a reproducir.
--   [x] Actualizar los anuncios inmediatamente si se detectan cambios en el campo "updated_at".
--   [x] Actualizar contenido local
+-   [x] Query a backend every 10 seconds to get the list of ads to play.
+-   [x] Update ads immediately if changes are detected in the "updated_at" field.
+-   [x] Update local content
 
-### Ejecucion:
+### Execution:
 
--   Para ejecutar directamente la alicacion
+-   To run the application directly
     ```bash
-    npm run start
+      npm run start
     ```
--   La aplicacion tambien se puede ejecutar en modo debuger
+-   The application can also be run in debug mode
+
+### Endpoints
+
+-   **GET /content/**
+
+    -   Description: Receives the list of contents to play
+    -   Response: JSON array of ad objects
+
+-   **GET /player/**
+    -   Description: Receives the player configuration
+    -   Response: JSON object
